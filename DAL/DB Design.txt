@@ -1,0 +1,57 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table tbl_Avl_Jobs {
+  Job_ID varchar [primary key]
+  Company_ID varchar
+  CreatorUserID varchar
+  Job_Name varchar 
+  AvailablePositions int
+  FilledPositions int
+  JobOpen bool
+  Domain varchar
+  CreatedOn datetime
+  Job_Description varchar
+  Job_Location varchar
+  Submission_Deadline datetime
+}
+//Skills required for this job?
+
+Table tbl_Users {
+  User_ID integer [primary key]
+  Name varchar
+  HighestQualification varchar
+  Joined_On date
+  YearsOfExperience int
+  Domain varchar
+  Current_Location varchar
+  Email varchar
+  Mobile varchar  
+}
+//User has which skill?
+
+Table tbl_Job_Applicants {
+  Applicant_ID string 
+  Job_ID varchar
+  Submitted_On datetime
+  Status varchar
+ 
+}
+Table tbl_Companies {
+  Company_ID varchar [primary key]
+  Name varchar
+  Rating decimal
+  Company_Estd_Date date
+  YearsOfExperience int
+  HQ_Location varchar
+  Domain varchar
+}
+
+Ref: tbl_Job_Applicants.Applicant_ID > tbl_Users.User_ID 
+Ref: tbl_Job_Applicants.Job_ID > tbl_Avl_Jobs.Job_ID 
+Ref: tbl_Avl_Jobs.Company_ID > tbl_Companies.Company_ID 
+
+//Required skills for a job??
+//Storing optional and mandatory skills
+
+

@@ -1,0 +1,9 @@
+.loginForm {
+  border: solid thin rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 30vw;
+  margin-top: 1rem;
+}
+.loginRow {
+  padding: 0.1rem;
+}
